@@ -1,7 +1,14 @@
 /**
  * Created by edouard on 30/06/14.
  */
-public class Handler {
+public abstract class Handler {
+
+    protected Handler nextHandler;
+    protected Integer value;
+
+    public Handler(Integer value){
+        this.value = value;
+    }
 
     public Handler getNextHandler() {
         return nextHandler;
@@ -10,16 +17,5 @@ public class Handler {
     public void setNextHandler(Handler nextHandler) {
         this.nextHandler = nextHandler;
     }
-
-    private Handler nextHandler;
-
-    public Handler(){
-        this.nextHandler = new Handler();
-    }
-
-    public void canHandle(Integer value){
-
-    }
-
 
 }
